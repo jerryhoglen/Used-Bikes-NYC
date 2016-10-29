@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My name is Jerry Hoglen and this is my first app that I am creating for careerfoundry on rails.
 
 Things you may want to cover:
 
