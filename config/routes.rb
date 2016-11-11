@@ -1,15 +1,7 @@
 Rails.application.routes.draw do
-  get 'static_pages/contact'
-
-  get 'staticic_pages/contact'
-
-  get 'static_c_pages/contact'
-
-  get 'static_pageges/contact'
-
+  get 'static_pages/index'
   get 'static_pages/about'
-
-  root 'static_pages#index'
+  get 'static_pages/contact'
 
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
