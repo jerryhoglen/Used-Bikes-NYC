@@ -10,9 +10,12 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-  	<% @products.each do |product| %>
-    <div class="item<%= " active" if product == @products.first %>">
-      <%= image_tag(product.image_url, class: "img-responsive", id: "my-image") %> 
+    <% @products.each do |product| %>
+    <div class="item <%= " active" if product == @products.first %>">
+      <%= link_to( image_tag(product.image_url), product) %>
+      <div class="carousel-caption">
+        <p><%= product.name %></p>
+      </div>
     </div>
     <% end %>
   </div>
