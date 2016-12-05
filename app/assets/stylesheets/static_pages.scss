@@ -17,9 +17,13 @@ html {
   min-height: 100%;
 }
 body {
-  margin-top: 15%;
+  margin-top: 10%;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+}
+
+p {
+  text-align: center;
 }
 
 #my-image {
@@ -51,8 +55,14 @@ body {
 }
 
 .product-table {
-  display : block;
-  width: auto;
-  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
+.index-about {
+  text-align: center;
+}
+
+.landing-page {
+  margin-top: 10%;
+}
