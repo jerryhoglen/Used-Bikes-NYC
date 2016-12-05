@@ -17,26 +17,11 @@ html {
   min-height: 100%;
 }
 body {
-  margin-top: 10%;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
 
-p {
-  text-align: center;
-}
-
-#my-image {
-  display: block;
-  margin: 0 auto;	
-}
-
-.image1 {
-  display: block;
-  margin: 0 auto;
-}
-
-.footer {
+.footer-main {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -63,6 +48,8 @@ p {
   text-align: center;
 }
 
-.landing-page {
-  margin-top: 10%;
+.contact-page {
+  text-align: center;
 }
+
+
