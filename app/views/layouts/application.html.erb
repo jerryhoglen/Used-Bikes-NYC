@@ -29,6 +29,12 @@
             <li><%= link_to "Products", products_path %></li>
             <li><%= link_to "Contact", static_pages_contact_path %></li>
           </ul>
+            <div class="search-bar">
+              <%= form_tag("/products", method: "get") do %>
+                <%= text_field_tag(:q) %>
+                <%= submit_tag("Search") %>
+              <% end %>
+            </div>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
