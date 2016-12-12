@@ -55,4 +55,6 @@ end
 
 gem 'devise'
 
+gem 'cancancan'
+
 ruby '2.3.1'
