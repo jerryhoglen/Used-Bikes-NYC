@@ -1,15 +1,16 @@
 <h1>Contact Page</h1>
 <div class= "contact-page">
-  <h2>Email</h2>
+  <h3>Email</h3>
     <p>JerryHoglen@me.com</p>
-  <h2>Phone</h2>
+  <h3>Phone</h3>
     <p>631-579-1319</p>
-  <h2>Location</h2>
+  <h3>Location</h3>
     <p>15 W 35th St, Manhattan,New York 10001</p>
-</div>
+ 
+
 
 <h1>Contact Us</h1>
-<div class= "contact-page">
+<div class= "container-fluid">
 <%= flash[:notice] %>
 
 <%= form_tag("/static_pages/thank_you") do %>
@@ -31,4 +32,5 @@
 </div>
 <%= submit_tag "Send" %>   
 <% end %>
+</div>
 </div>
