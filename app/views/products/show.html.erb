@@ -3,21 +3,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-<%= @product.highest_rating_comment %> 
+  <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %>
 </p>
+
+<div class="product-reviews">
+    <% @comments.each do |comment| %>
+        <div class="row">
+            <hr>
+            <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
+            <p><%= "Rating: #{comment.rating}/5" %></p>
+            <p><%= comment.body %></p>
+        </div>
+    <% end %>
+</div>
+
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
 </p>
 
 <p>
@@ -26,9 +28,21 @@
 </p>
 
 <p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
+
+<h3>Highest Rated Product: <div class="rated" id="highest-rating" data-score"<%= @product.highest_rating_comment %>"></div></h3>
+
+<h3>Average Rated Product: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div> </h3>
+
+
+
 
 
 
