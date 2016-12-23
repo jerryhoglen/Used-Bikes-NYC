@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :users
   resources :products do
     resources :comments
   end
+  resources :users
+  
   resources :orders, only: [:index, :show, :create, :destroy]
   
   root 'static_pages#index'
