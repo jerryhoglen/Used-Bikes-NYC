@@ -57,4 +57,7 @@ gem 'devise'
 
 gem 'cancancan'
 
+## Gemfile for pagination
+gem 'will_paginate', '~> 3.1.1'
+
 ruby '2.3.1'
