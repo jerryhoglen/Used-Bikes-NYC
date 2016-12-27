@@ -27,6 +27,7 @@
   <%= @product.price %>
 </p>
 
+<div class="reviews-ratings">
 <% if signed_in? %>
   <h4>Add a review:</h4>
   <%= form_for([@product, @product.comments.build]) do |f| %>
@@ -34,8 +35,9 @@
       <%= f.label :body, "Comments" %><br>
       <%= f.text_area :body %>
     </p>
-    <p>
-      <div class="rating"></div>
+      <div class="rating">
+        <h4>Rate me!</h4>
+      </div>
     </p>  
     <p>
       <%= f.submit "Submit" %>
@@ -43,7 +45,7 @@
   <% end %>
 <% end %>
 
-<div class="product-reviews">
+<div class="reviews-ratings">
     <% @comments.each do |comment| %>
         <div class="row">
             <hr>
@@ -53,6 +55,7 @@
             <p><%= comment.body %></p>
         </div>
     <% end %>
+</div>
 </div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
