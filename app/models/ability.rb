@@ -15,4 +15,3 @@ class Ability
     #can :manage, Order, id: user.order.id
   end
 end
-end
