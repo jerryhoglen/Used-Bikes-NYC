@@ -63,4 +63,7 @@ gem 'cancancan'
 ## Gemfile for pagination
 gem 'will_paginate', '~> 3.1.1'
 
+# Payment processing through Stripe
+gem 'stripe'
+
 ruby '2.3.1'
