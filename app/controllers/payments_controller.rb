@@ -5,6 +5,7 @@ def create
 	@user = current_user
   token = params[:stripeToken]
   # Create the charge on Stripe's servers - this will charge the user's card
+  
   begin
     charge = Stripe::Charge.create(
       :amount => @product.price  # amount in cents, again
