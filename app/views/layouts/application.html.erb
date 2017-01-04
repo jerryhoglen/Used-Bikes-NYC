@@ -46,21 +46,21 @@
       </div>
     </nav>
      
-     <% if notice %>
-    <div class="alert alert-info" role="alert">
-      <p id="notice" class="alert alert-info"><%= notice %></p>
-    </div>
+    <% if notice %>
+      <div class="alert alert-info" role="alert">
+        <p id="notice"><%= notice %></p>
+      </div>
     <% end %>
     
     <% if alert %>
-    <div class="alert alert-danger" role="alert">
-      <p id="alert" class="alert alert-info"><%= alert %></p>
-    </div>
+      <div class="alert alert-danger" role="alert">
+        <p id="alert"><%= alert %></p>
+      </div>
     <% end %>
   
-	<%= yield %>
+	  <%= yield %>
   
-  <footer class="footer">
+    <footer class="footer">
       <div class="footer-main">
         <p>&copy; Cycle NYC 2016 .</p>
       </div>

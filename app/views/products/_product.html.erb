@@ -3,7 +3,7 @@
   <%= image_tag(product.image_url, class: "img-responsive") if product.image_url %>
   <h2><%= product.name %></h2>
   <p><strong>Colour:   </strong><%= product.colour %></p>
-  <p><strong>Price:   $</strong><%= product.price %></p>
+  <p><strong>Price:   </strong><%= number_to_currency(product.price) %></p>
   <p><strong>Description:   </strong><%= product.description %></p>
   
   <td><%= link_to 'Show', product %></td>

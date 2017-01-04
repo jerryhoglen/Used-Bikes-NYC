@@ -1,71 +1,83 @@
 
 <h1>Product Details</h1>
-<p id="notice"><%= notice %></p>
-
+<div class ="container" id="product-details">
+  <div class="row">
+    <div class="col-md-6">
 <p>
   <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %>
 </p>
+  </div><!-- close row -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="col-md-6">
 
-
-<p>
-  <strong>Colour:</strong>
-  <%= @product.colour %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
 
 
+  <p>
+    <strong>Colour:</strong>
+    <%= @product.colour %>
+  </p>
 
-<div class="reviews-ratings">
-<% if signed_in? %>
-  <h4>Add a review:</h4>
-  <%= form_for([@product, @product.comments.build]) do |f| %>
-    <p>
-      <%= f.label :body, "Comments" %><br>
-      <%= f.text_area :body %>
-    </p>
-      <div class="rating">
-        <h4>Rate me!</h4>
-      </div>
-    </p>  
-    <p>
-      <%= f.submit "Submit" %>
-    </p>
-  <% end %>
-<% end %>
+  <p>
+    <strong>Price:</strong>
+    <%= number_to_currency(@product.price) %>
+    <div class="payment-btn">
+      <%= form_tag "/payments/create" do %>
+      <%= hidden_field_tag(:product_id, @product.id) %>
+      <%= render partial: "shared/stripe_checkout_button" %>
+      <% end %>
+    </div>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+  </div><!-- About product -->
+ </div><!-- end row -->
+</div><!-- end container -->
 
-<div class="reviews-ratings">
-    <% @comments.each do |comment| %>
-        <div class="row">
-            <hr>
-            <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
-            </p>
-            <% if signed_in? && current_user.admin? %>
-            <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-            <div class="rated" data-score="<%= comment.rating %>"></div>
-            </p>
-            <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-            <p><%= comment.body %></p>
+<div class= "container" id="review-rating-section">
+  <div class="row">
+    <div class="col-md-6">
+      <% if signed_in? %>
+      <h4>Add a review:</h4>
+      <%= form_for([@product, @product.comments.build]) do |f| %>
+      <p>
+        <%= f.label :body, "Comments" %><br>
+        <%= f.text_area :body %>
+      </p>
+        <div class="rating">
+          <h4>Rate me!</h4>
         </div>
+      </p>  
+      <p>
+        <%= f.submit "Submit" %>
+      </p>
+      <% end %>
+      <% end %>
+    </div><!-- end column -->
+    
+  <div class="col-md-6">
+    <div class="reviews-ratings">
+      <% @comments.each do |comment| %>
+        <hr>
+        <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
+        </p>
+        <% if signed_in? && current_user.admin? %>
+        <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      <div class="rated" data-score="<%= comment.rating %>"></div>
+        </p>
+        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+        <p><%= comment.body %></p>
+      </div>
     <% end %>
-    <%= form_tag "/payments/create" do %>
-    <%= hidden_field_tag(:product_id, @product.id) %>
-    <%= render partial: "shared/stripe_checkout_button" %>
-    <% end %>
-</div>
-</div>
+  </div><!-- end row -->
+</div><!-- end container -->
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

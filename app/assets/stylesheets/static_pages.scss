@@ -10,6 +10,7 @@ h1, h2, h3,{
 html {
   position: relative;
   min-height: 100%;
+  padding-bottom: 60px;
 }
 
 body {
@@ -83,6 +84,9 @@ input[type=text]:focus {
   margin-bottom: 10%;
   }
 
+.payment-btn {
+  margin-left: 8%; 
+}
 
 
 
