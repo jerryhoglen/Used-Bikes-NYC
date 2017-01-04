@@ -26,10 +26,12 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    byebug
     @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
+        UserMailer.welcome(@user).deliver_now
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
