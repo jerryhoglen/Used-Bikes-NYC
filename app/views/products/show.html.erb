@@ -6,7 +6,7 @@
 <p>
   <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %>
 </p>
-  </div><!-- close row -->
+  </div><!-- close column -->
 
 <div class="col-md-6">
 
@@ -51,8 +51,7 @@
       </p>
         <div class="rating">
           <h4>Rate me!</h4>
-        </div>
-      </p>  
+        </div> 
       <p>
         <%= f.submit "Submit" %>
       </p>
@@ -60,21 +59,22 @@
       <% end %>
     </div><!-- end column -->
     
-  <div class="col-md-6">
-    <div class="reviews-ratings">
-      <% @comments.each do |comment| %>
+    <div class="col-md-6">
+      <div class="reviews-ratings">
+        <% @comments.each do |comment| %>
         <hr>
         <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
         </p>
         <% if signed_in? && current_user.admin? %>
         <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-      <div class="rated" data-score="<%= comment.rating %>"></div>
-        </p>
-        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+      <div class="rated" data-score="<%= comment.rating %>">
+      </div>
+        <p>Average Rating:<div class="rated" data-score="<%= @product.average_rating %>"></div></p>
         <p><%= comment.body %></p>
       </div>
     <% end %>
+    </div><!-- end column -->
   </div><!-- end row -->
 </div><!-- end container -->
 
