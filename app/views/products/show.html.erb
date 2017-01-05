@@ -53,7 +53,7 @@
           <h4>Rate me!</h4>
         </div> 
       <p>
-        <%= f.submit "Submit" %>
+        <%= f.submit "Rate" %>
       </p>
       <% end %>
       <% end %>
@@ -70,9 +70,8 @@
         <% end %>
       <div class="rated" data-score="<%= comment.rating %>">
       </div>
-        <p>Average Rating:<div class="rated" data-score="<%= @product.average_rating %>"></div></p>
+        <p>Average Rating:<div class="reviews-ratings" data-score="<%= @product.average_rating %>"></div></p>
         <p><%= comment.body %></p>
-      </div>
     <% end %>
     </div><!-- end column -->
   </div><!-- end row -->
