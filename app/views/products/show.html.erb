@@ -1,12 +1,12 @@
 
 <h1>Product Details</h1>
-<div class ="container" id="product-details">
+<div class ="container-fluid" id="product-details">
   <div class="row">
     <div class="col-md-6">
-<p>
-  <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %>
-</p>
-  </div><!-- close column -->
+      <p>
+       <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %>
+      </p>
+    </div><!-- close column -->
 
 <div class="col-md-6">
 
@@ -39,7 +39,7 @@
  </div><!-- end row -->
 </div><!-- end container -->
 
-<div class= "container" id="review-rating-section">
+<div class= "container-fluid" id="review-rating-section">
   <div class="row">
     <div class="col-md-6">
       <% if signed_in? %>
