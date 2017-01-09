@@ -44,7 +44,7 @@
     <div class="col-md-6">
       <% if signed_in? %>
       <h4>Add a review:</h4>
-      <%= form_for([@product, @product.comments.build]) do |f| %>
+      <%= form_for([@product, @product.comments.build], remote:true) do |f| %>
       <p>
         <%= f.label :body, "Comments" %><br>
         <%= f.text_area :body %>
@@ -60,7 +60,7 @@
     </div><!-- end column -->
     
     <div class="col-md-6">
-      <div class="reviews-ratings">
+      <div  class="reviews-ratings product-reviews">
         <% @comments.each do |comment| %>
         <hr>
         <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
@@ -70,7 +70,7 @@
         <% end %>
       <div class="rated" data-score="<%= comment.rating %>">
       </div>
-        <p>Average Rating:<div class="reviews-ratings" data-score="<%= @product.average_rating %>"></div></p>
+        <p>Average Rating:<div class="reviews-ratings rated" data-score="<%= @product.average_rating %>"></div></p>
         <p><%= comment.body %></p>
     <% end %>
     </div><!-- end column -->
