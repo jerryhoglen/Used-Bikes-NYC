@@ -72,4 +72,9 @@ gem "brakeman", :require => false
 # Ruby memcache client
 gem 'dalli'
 
+# Redis Server
+gem 'redis-rails'
+
+gem 'newrelic_rpm'
+
 ruby '2.3.1'
