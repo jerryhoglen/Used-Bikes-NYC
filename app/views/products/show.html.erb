@@ -61,6 +61,7 @@
     
     <div class="col-md-6">
       <div  class="reviews-ratings product-reviews">
+        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
         <% @comments.each do |comment| %>
         <hr>
         <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
