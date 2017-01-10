@@ -35,13 +35,11 @@
               <%= link_to('Login', new_user_session_path) %>
             <% end %>
             </ul>
-            <div class="navbar-right">
-              <%= form_tag("/products", method: "get", class: "navbar-form navbar-right") do %>
-                <div class="form-group">
-                  <%= text_field_tag(:q, nil, class: "form-control search-bar", placeholder: "Search") %>
-                  <%= button_tag("Go", class: "btn btn-default btn-default-transparent") %>
+            <div class="navbar-right form-group">
+              <%= form_tag("/products", method: "get") do %>
+                  <%= text_field_tag(:q, nil,  class: "form-control") %>
+                  <%= submit_tag("Go", class: "btn btn-default") %>
                   <% end %>
-                </div>
             </div>
          </div><!--/.nav-collapse -->
       </div>
