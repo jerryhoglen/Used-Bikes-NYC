@@ -10,11 +10,11 @@
 
 
 <h1>Contact Us</h1>
-<div class= "container-fluid">
+<div class= "container">
 <%= flash[:notice] %>
 
 <%= form_tag("/static_pages/thank_you") do %>
-<div class="row">
+<div class="row>
   <div class="col-md-4">
     <div class="form-group">
       <%= label_tag :name %>
@@ -30,7 +30,7 @@
     </div>      
   </div>
 </div>
-<%= submit_tag "Send" %>   
+<%= submit_tag "Send", class: "btn-sm" %>   
 <% end %>
 </div>
 </div>

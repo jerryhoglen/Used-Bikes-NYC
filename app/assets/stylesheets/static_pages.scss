@@ -56,13 +56,12 @@ body {
   text-align: center;
 }
 
+.navbar-right {
+  margin-top: .8%;
+}
+
 .search-bar {
-  text-align: right;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: gray;
-  font-size: 1em;
-  margin-top: 2%;
-  margin-right: 3%;
+  text-align: center;  
 }
 
 .edit-page {
@@ -91,6 +90,7 @@ input[type=text]:focus {
 .new-product-page {
   margin-left: 5%;
 }
+
 
 
 
