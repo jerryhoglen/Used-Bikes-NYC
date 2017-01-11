@@ -13,7 +13,7 @@
   <body>
       <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -23,26 +23,25 @@
           </button>
           <a class="navbar-brand" <%= link_to "Cycle NYC", root_url %></a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+          <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Featured Products", static_pages_landing_page_path %></li>
             <li><%= link_to "Products", products_path %></li>
             <li><%= link_to "Contact", static_pages_contact_path %></li>
-            <li>
-            <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-            <% else %>
-              <%= link_to('Login', new_user_session_path) %>
-            <% end %>
-            </ul>
-            <div class="navbar-right form-group">
-              <%= form_tag("/products", method: "get") do %>
-                  <%= text_field_tag(:q, nil,  class: "form-control") %>
-                  <%= submit_tag("Go", class: "btn btn-default") %>
-                  <% end %>
+            <li><% if user_signed_in? %>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                <% else %>
+                <%= link_to('Login', new_user_session_path) %>
+                <% end %></li>
+              <%= form_tag("/products",method: :get, class: "navbar-form navbar-right") do -%>
+            <div class="form-group">
+              <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search") %>
             </div>
-         </div><!--/.nav-collapse -->
-      </div>
+              <%= submit_tag("Go", class: "btn btn-default") %>
+            <% end -%>
+         </ul>
+        </div><!--/.nav-collapse -->
+      </div><!-- end container -->
     </nav>
      
     <% if notice %>

@@ -7,24 +7,19 @@
        <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %>
       </p>
     </div><!-- close column -->
-
-<div class="col-md-6">
-
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
-
-
-  <p>
-    <strong>Colour:</strong>
-    <%= @product.colour %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= number_to_currency(@product.price) %>
-    <div class="payment-btn">
+  <div class="col-md-6">
+    <p>
+      <strong>Name:</strong>
+      <%= @product.name %>
+    </p>
+    <p>
+      <strong>Colour:</strong>
+      <%= @product.colour %>
+    </p>
+    <p>
+      <strong>Price:</strong>
+      <%= number_to_currency(@product.price) %>
+  <div class="payment-btn">
       <%= form_tag "/payments/create" do %>
       <%= hidden_field_tag(:product_id, @product.id) %>
       <%= render partial: "shared/stripe_checkout_button" %>
