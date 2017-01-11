@@ -1,0 +1,299 @@
+/* line 5, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/comments.scss */
+.reviews-ratings {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-left: 5%;
+  padding: -2%;
+}
+
+/* line 11, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/comments.scss */
+.add-a-rating {
+  margin-left: 2%;
+}
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: "raty";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/raty.eot");
+  src: url("fonts/raty.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/raty.svg#raty") format("svg");
+  src: url("fonts/raty.ttf") format("truetype");
+  src: url("fonts/raty.woff") format("woff");
+}
+
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "raty";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.cancel-on-png:before {
+  content: "\e600";
+}
+
+.cancel-off-png:before {
+  content: "\e601";
+}
+
+.star-on-png:before {
+  content: "\f005";
+}
+
+.star-off-png:before {
+  content: "\f006";
+}
+
+.star-half-png:before {
+  content: "\f123";
+}
+/* line 4, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/products.scss */
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: dark-gray;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 7%;
+}
+/* line 1, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 16, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 47, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 52, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 56, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 62, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 70, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 81, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 87, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/* line 4, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: dark-gray;
+  text-align: center;
+}
+
+/* line 10, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 60px;
+}
+
+/* line 16, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+body {
+  margin-top: 12%;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+/* line 22, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+#navbar {
+  float: right;
+}
+
+/* line 26, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.footer-main {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #f5f5f5;
+}
+
+/* line 36, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+#featured-bike {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75%;
+  width: 75%;
+}
+
+/* line 44, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.product-table {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 49, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.store-front {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 55, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.contact-page {
+  text-align: center;
+}
+
+/* line 59, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.search-bar {
+  text-align: center;
+}
+
+/* line 63, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.edit-page {
+  margin-left: 5%;
+}
+
+/* line 67, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+/* line 71, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.panel-body {
+  display: block;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+/* line 77, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.comments-box {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+/* line 82, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.payment-btn {
+  margin-left: 8%;
+}
+
+/* line 86, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.reviews-ratings {
+  margin-left: -2%;
+}
+
+/* line 90, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.rated {
+  margin-left: -2%;
+}
+
+/* line 94, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/static_pages.scss */
+.new-product-page {
+  margin-left: 5%;
+}
+/***Devise CSS Styling****/
+/* line 8, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/users.scss */
+.devise {
+  text-align: center;
+}
+
+/* line 12, /Users/jerryhoglen/Desktop/nameofapp/app/assets/stylesheets/users.scss */
+.form-container-devise {
+  text-align: center;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
