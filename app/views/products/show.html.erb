@@ -1,39 +1,28 @@
 
-<h1>Product Details</h1>
 <div class ="container" id="product-details">
+  <h1>Product Details</h1>
   <div class="row" data-product-id="<%= @product.id%>">
     <div class="col-md-6">
-      <p>
-       <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %>
-      </p>
+      <p><%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %></p>
     </div><!-- close column -->
-  <div class="col-md-6">
-    <p>
-      <strong>Name:</strong>
-      <%= @product.name %>
-    </p>
-    <p>
-      <strong>Colour:</strong>
-      <%= @product.colour %>
-    </p>
-    <p>
-      <strong>Price:</strong>
-      <%= number_to_currency(@product.price) %>
-   <div class="payment-btn">
-      <%= form_tag "/payments/create" do %>
-      <%= hidden_field_tag(:product_id, @product.id) %>
-      <%= render partial: "shared/stripe_checkout_button" %>
-      <% end %>
-      <p>
-        <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
-    </div>
-    </p>
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
-  </div><!-- About product -->
- </div><!-- end row -->
+      <div class="col-md-6">
+        <p><strong>Name:</strong>
+        <%= @product.name %></p>
+        <p><strong>Colour:</strong>
+        <%= @product.colour %></p>
+        <p><strong>Price:</strong>
+        <%= number_to_currency(@product.price) %></p>
+      <div class="payment-btn">
+        <%= form_tag "/payments/create" do %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>
+        <p><div class="rated" data-score="<%= @product.average_rating %>"></div></p>
+      </div>
+        <p><strong>Description:</strong>
+        <%= @product.description %></p>
+      </div><!-- About product -->
+    </div><!-- end row -->
 </div><!-- end container -->
 
 <div class= "container" id="review-rating-section">
@@ -42,16 +31,12 @@
       <% if signed_in? %>
       <h4>Add a review:</h4>
       <%= form_for([@product, @product.comments.build], remote:true) do |f| %>
-      <p>
-        <%= f.label :body, "Comments" %><br>
-        <%= f.text_area :body, class: "form-control" %>
-      </p>
-        <div class="rating">
-          <h4>Rate me!</h4>
-        </div> 
-      <p>
-        <%= f.submit "Rate", class: "btn btn-default" %>
-      </p>
+      <p><%= f.label :body, "Comments" %><br>
+         <%= f.text_area :body, class: "form-control" %></p>
+      <div class="rating">
+        <h4>Rate me!</h4>
+      </div> 
+      <p><%= f.submit "Rate", class: "btn btn-default" %></p>
       <% end %>
       <% end %>
     </div><!-- end column -->
@@ -59,18 +44,18 @@
     <div class="col-md-6">
       <div  class="reviews-ratings product-reviews">
         <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-        <% @comments.each do |comment| %>
-        <hr>
-        <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
-        </p>
-        <% if signed_in? && current_user.admin? %>
-        <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      <div class="rated" data-score="<%= comment.rating %>">
-      </div>
-      <p><%= comment.body %></p>
-    <% end %>
-    </div><!-- end column -->
+          <% @comments.each do |comment| %>
+          <hr>
+          <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
+          <% if signed_in? && current_user.admin? %>
+          <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        <div class="rated" data-score="<%= comment.rating %>">
+        </div>
+          <p><%= comment.body %></p>
+          <% end %>
+      </div><!-- end reviews-->
+    </div><!-- end column  -->
   </div><!-- end row -->
 </div><!-- end container -->
 
